@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   normalize.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/21 21:35:53 by wjuneo-f          #+#    #+#             */
+/*   Updated: 2022/01/21 21:46:17 by wjuneo-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -8,7 +20,7 @@ void	add_index_stack_a(t_stack **stack_a, t_stack **stack_c)
 
 	index = 1;
 	cpy_stack_a = *stack_a;
-	while(*stack_c)
+	while (*stack_c)
 	{
 		if (cpy_stack_a->content == (*stack_c)->content)
 		{
@@ -26,11 +38,13 @@ int	ordened_stack(t_stack **stack)
 	t_stack	*cpy_stack;
 
 	cpy_stack = *stack;
-	while(cpy_stack && cpy_stack->next)
+	while (cpy_stack && cpy_stack->next)
+	{
 		if ((cpy_stack->content > cpy_stack->next->content))
 			return (0);
 		else
 			cpy_stack = cpy_stack->next;
+	}
 	return (1);
 }
 
@@ -42,7 +56,7 @@ void	normalize_bubble_sort(t_stack **stack_c, t_stack **stack_a)
 
 	cpy_stack_c = *stack_c;
 	cpy_stack_cc = *stack_c;
-	while(cpy_stack_c && cpy_stack_c->next)
+	while (cpy_stack_c && cpy_stack_c->next)
 	{
 		if (cpy_stack_c->content > cpy_stack_c->next->content)
 		{

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/21 21:39:58 by wjuneo-f          #+#    #+#             */
+/*   Updated: 2022/01/21 21:39:59 by wjuneo-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -22,7 +34,6 @@ void	sb(t_stack **stack_b)
 		temp = (*stack_b)->next->content;
 		(*stack_b)->next->content = (*stack_b)->content;
 		(*stack_b)->content = temp;
-
 	}
 }
 
@@ -68,75 +79,4 @@ void	pb(t_stack	**stack_a, t_stack **stack_b)
 		ft_stackadd_front(stack_b, temp);
 	}
 	printf("pb\n");
-}
-
-void	ra(t_stack	**stack_a)
-{
-	t_stack	*temp;
-
-	if (*stack_a && (*stack_a)->next)
-	{
-		temp = ft_stacklast(*stack_a);
-		temp->next = *stack_a;
-		(*stack_a)->prev = temp;
-		*stack_a = (*stack_a)->next;
-		temp->next->next = NULL;
-	}
-	printf("ra\n");
-}
-
-void	rb(t_stack	**stack_b)
-{
-	t_stack	*temp;
-
-	if (*stack_b && (*stack_b)->next)
-	{
-		temp = ft_stacklast(*stack_b);
-		temp->next = *stack_b;
-		(*stack_b)->prev = temp;
-		*stack_b = (*stack_b)->next;
-		temp->next->next = NULL;
-	}
-}
-
-void	rr(t_stack **stack_a, t_stack **stack_b)
-{
-	ra(stack_a);
-	rb(stack_b);
-}
-
-void	rra(t_stack **stack_a)
-{
-	t_stack *temp;
-
-	if (*stack_a && (*stack_a)->next)
-	{
-		temp = ft_stacklast(*stack_a);
-		temp->next = (*stack_a);
-		(*stack_a)->prev = temp;
-		temp->prev->next = NULL;
-		temp->prev = NULL;
-		ft_stackadd_front(stack_a, temp);
-	}
-}
-
-void	rrb(t_stack **stack_b)
-{
-	t_stack *temp;
-
-	if (*stack_b && (*stack_b)->next)
-	{
-		temp = ft_stacklast(*stack_b);
-		temp->next = (*stack_b);
-		(*stack_b)->prev = temp;
-		temp->prev->next = NULL;
-		temp->prev = NULL;
-		ft_stackadd_front(stack_b, temp);
-	}
-}
-
-void	rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	rra(stack_a);
-	rrb(stack_b);
 }
