@@ -1,4 +1,5 @@
 push_swap
 a.out
-*o
-.sh
+*.o
+*.sh
+pyviz.py
