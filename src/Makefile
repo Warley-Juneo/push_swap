@@ -6,12 +6,12 @@
 #    By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 13:50:56 by wjuneo-f          #+#    #+#              #
-#    Updated: 2022/02/01 14:06:56 by wjuneo-f         ###   ########.fr        #
+#    Updated: 2022/02/09 18:39:40 by wjuneo-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCE			= normalize.c operations.c operations1.c operations2.c
-SOURCE			+= push_swap.c utils_libft.c utils_lstlinked.c
+SOURCE			= normalize.c operations.c operations1.c operations2.c frees.c
+SOURCE			+= push_swap.c utils_libft.c utils_lstlinked.c check_arguments.c
 
 OBJECTS			= $(SOURCE:.c=.o)
 

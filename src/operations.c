@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 21:39:58 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/01/21 21:39:59 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:58:45 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	sa(t_stack **stack_a)
 		(*stack_a)->next->content = (*stack_a)->content;
 		(*stack_a)->content = temp;
 	}
+	printf("sa\n");
 }
 
 void	sb(t_stack **stack_b)
@@ -35,12 +36,14 @@ void	sb(t_stack **stack_b)
 		(*stack_b)->next->content = (*stack_b)->content;
 		(*stack_b)->content = temp;
 	}
+	printf("sb\n");
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
+	printf("ss\n")
 }
 
 void	pa(t_stack	**stack_a, t_stack **stack_b)
@@ -59,7 +62,7 @@ void	pa(t_stack	**stack_a, t_stack **stack_b)
 			*stack_b = NULL;
 		ft_stackadd_front(stack_a, temp);
 	}
-	printf("pb\n");
+	printf("pa\n");
 }
 
 void	pb(t_stack	**stack_a, t_stack **stack_b)

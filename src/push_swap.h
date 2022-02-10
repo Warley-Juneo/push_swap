@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 20:15:52 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/01/21 21:44:58 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:06:43 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ int		ft_atoi(const char *str);
 int		ordened_stack(t_stack **stack);
 void	normalize_bubble_sort(t_stack **stack_c, t_stack **stack_a);
 void	add_index_stack_a(t_stack **stack_a, t_stack **stack_c);
+int		check_arguments(char *argv[]);
 #endif
