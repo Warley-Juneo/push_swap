@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raddix.c                                           :+:      :+:    :+:   */
+/*   init_end.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 17:27:43 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/02/09 17:36:08 by wjuneo-f         ###   ########.fr       */
+/*   Created: 2022/02/13 14:36:24 by wjuneo-f          #+#    #+#             */
+/*   Updated: 2022/02/13 19:06:45 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	raddix(t_stack **stack_a, t_stack **stack_b)
+void	init_end(t_stack **stack, char	*argv[])
 {
-	int	i;
-	int	j;
-	int	size_a;
-	int	size_b;
+	int		i;
+	t_stack	*temp;
 
-	i = 0;
-	size_a = ft_stacksize(*stack_a);
-	size_b = ft_stacksize(*stack_b);
-	while (!ordened_stack(stack_a))
+	i = 1;
+	while (argv[i])
 	{
-		j = 0;
-		while (j < size_a)
-		{
-			if (((*stack_a)->index >> i) & 1)
-				ra(stack_a);
-			else
-				pb(stack_a, stack_b);
-			j++;
-		}
-		size_b = ft_stacksize(*stack_b);
-		while ((size_b--))
-		{
-			pa(stack_a, stack_b);
-		}
-		i++;
+		temp = ft_stacknew(ft_atoi(argv[i++]));
+		ft_stackadd_back(stack, temp);
 	}
+}
+
+void	del_stacks(t_stack **stack)
+{
+	t_stack		*temp;
+
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	stack = NULL;
 }

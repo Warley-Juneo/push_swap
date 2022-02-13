@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 21:39:58 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/02/09 20:58:45 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/02/13 19:07:24 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	sa(t_stack **stack_a)
 		temp = (*stack_a)->next->content;
 		(*stack_a)->next->content = (*stack_a)->content;
 		(*stack_a)->content = temp;
+		temp = (*stack_a)->next->index;
+		(*stack_a)->next->index = (*stack_a)->index;
+		(*stack_a)->index = temp;
 	}
 	printf("sa\n");
 }
@@ -35,6 +38,9 @@ void	sb(t_stack **stack_b)
 		temp = (*stack_b)->next->content;
 		(*stack_b)->next->content = (*stack_b)->content;
 		(*stack_b)->content = temp;
+		temp = (*stack_b)->next->index;
+		(*stack_b)->next->index = (*stack_b)->index;
+		(*stack_b)->index = temp;
 	}
 	printf("sb\n");
 }
@@ -43,7 +49,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
-	printf("ss\n")
+	printf("ss\n");
 }
 
 void	pa(t_stack	**stack_a, t_stack **stack_b)

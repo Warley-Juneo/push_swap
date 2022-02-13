@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 21:39:04 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2022/01/21 21:40:30 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2022/02/10 22:21:35 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	rra(t_stack **stack_a)
 		temp->prev = NULL;
 		ft_stackadd_front(stack_a, temp);
 	}
+	printf("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
